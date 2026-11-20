@@ -1,0 +1,173 @@
+-- ============================================================================
+-- BASE DE DATOS: KICKZONE - CENTRO DEPORTIVO INTEGRAL
+-- Proyecto Final Desarrollo Web - Universidad Tecnológica de Panamá
+-- Equipo: David Rios, Edward Sanchez, Edgardo Cordoba, Jean Llanten
+-- ============================================================================
+
+DROP DATABASE IF EXISTS kickzone_db;
+CREATE DATABASE kickzone_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE kickzone_db;
+
+-- 1. TABLA DE ROLES
+CREATE TABLE roles (
+    id_rol INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_rol VARCHAR(30) NOT NULL UNIQUE,
+    descripcion VARCHAR(150) NOT NULL
+) ENGINE=InnoDB;
+
+-- 2. TABLA DE USUARIOS (Con soporte para bloqueo por fuerza bruta y estados)
+CREATE TABLE usuarios (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    id_rol INT NOT NULL,
+    nombre VARCHAR(80) NOT NULL,
+    apellido VARCHAR(80) NOT NULL,
+    correo VARCHAR(120) NOT NULL UNIQUE,
+    telefono VARCHAR(20) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    estado ENUM('ACTIVO', 'INACTIVO') NOT NULL DEFAULT 'ACTIVO',
+    intentos_fallidos INT NOT NULL DEFAULT 0,
+    bloqueado_hasta DATETIME NULL DEFAULT NULL,
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_usuario_rol FOREIGN KEY (id_rol) REFERENCES roles(id_rol) ON UPDATE CASCADE,
+    INDEX idx_usuario_correo (correo),
+    INDEX idx_usuario_rol (id_rol)
+) ENGINE=InnoDB;
+
+-- 3. TABLA DE DEPORTES / DISCIPLINAS
+CREATE TABLE deportes (
+    id_deporte INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(60) NOT NULL UNIQUE,
+    descripcion VARCHAR(200) NOT NULL,
+    icono VARCHAR(50) DEFAULT 'fa-futbol'
+) ENGINE=InnoDB;
+
+-- 4. TABLA DE CANCHAS (Con tarifa diurna y nocturna)
+CREATE TABLE canchas (
+    id_cancha INT AUTO_INCREMENT PRIMARY KEY,
+    id_deporte INT NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT NOT NULL,
+    superficie VARCHAR(60) NOT NULL,
+    capacidad_jugadores INT NOT NULL,
+    tarifa_diurna DECIMAL(8,2) NOT NULL,
+    tarifa_nocturna DECIMAL(8,2) NOT NULL,
+    hora_inicio_nocturna TIME NOT NULL DEFAULT '18:00:00',
+    imagen_url VARCHAR(255) DEFAULT 'assets/img/cancha_default.jpg',
+    estado ENUM('DISPONIBLE', 'MANTENIMIENTO', 'INACTIVA') NOT NULL DEFAULT 'DISPONIBLE',
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_cancha_deporte FOREIGN KEY (id_deporte) REFERENCES deportes(id_deporte) ON UPDATE CASCADE,
+    INDEX idx_cancha_deporte (id_deporte),
+    INDEX idx_cancha_estado (estado)
+) ENGINE=InnoDB;
+
+-- 5. TABLA DE IMPLEMENTOS DEPORTIVOS EN ALQUILER
+CREATE TABLE implementos (
+    id_implemento INT AUTO_INCREMENT PRIMARY KEY,
+    id_deporte INT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion VARCHAR(200) NOT NULL,
+    precio_alquiler DECIMAL(8,2) NOT NULL,
+    stock_total INT NOT NULL DEFAULT 10,
+    estado ENUM('ACTIVO', 'INACTIVO') NOT NULL DEFAULT 'ACTIVO',
+    CONSTRAINT fk_implemento_deporte FOREIGN KEY (id_deporte) REFERENCES deportes(id_deporte) ON DELETE SET NULL
+) ENGINE=InnoDB;
+
+-- 6. TABLA DE RESERVAS
+CREATE TABLE reservas (
+    id_reserva INT AUTO_INCREMENT PRIMARY KEY,
+    codigo_reserva VARCHAR(20) NOT NULL UNIQUE,
+    id_cliente INT NOT NULL,
+    id_cancha INT NOT NULL,
+    fecha_reserva DATE NOT NULL,
+    hora_inicio TIME NOT NULL,
+    hora_fin TIME NOT NULL,
+    es_tarifa_nocturna TINYINT(1) NOT NULL DEFAULT 0,
+    subtotal_cancha DECIMAL(8,2) NOT NULL,
+    subtotal_implementos DECIMAL(8,2) NOT NULL DEFAULT 0.00,
+    total_pagar DECIMAL(8,2) NOT NULL,
+    notas_cliente VARCHAR(255) NULL,
+    estado ENUM('PENDIENTE', 'CONFIRMADA', 'COMPLETADA', 'CANCELADA') NOT NULL DEFAULT 'PENDIENTE',
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_reserva_cliente FOREIGN KEY (id_cliente) REFERENCES usuarios(id_usuario) ON UPDATE CASCADE,
+    CONSTRAINT fk_reserva_cancha FOREIGN KEY (id_cancha) REFERENCES canchas(id_cancha) ON UPDATE CASCADE,
+    INDEX idx_reserva_fecha_cancha (id_cancha, fecha_reserva, estado),
+    INDEX idx_reserva_cliente (id_cliente)
+) ENGINE=InnoDB;
+
+-- 7. TABLA DETALLE DE IMPLEMENTOS ALQUILADOS POR RESERVA
+CREATE TABLE reserva_implementos (
+    id_detalle INT AUTO_INCREMENT PRIMARY KEY,
+    id_reserva INT NOT NULL,
+    id_implemento INT NOT NULL,
+    cantidad INT NOT NULL DEFAULT 1,
+    precio_unitario DECIMAL(8,2) NOT NULL,
+    subtotal DECIMAL(8,2) NOT NULL,
+    CONSTRAINT fk_det_reserva FOREIGN KEY (id_reserva) REFERENCES reservas(id_reserva) ON DELETE CASCADE,
+    CONSTRAINT fk_det_implemento FOREIGN KEY (id_implemento) REFERENCES implementos(id_implemento) ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+-- 8. TABLA DE PAGOS
+CREATE TABLE pagos (
+    id_pago INT AUTO_INCREMENT PRIMARY KEY,
+    id_reserva INT NOT NULL,
+    metodo_pago ENUM('YAPPY', 'EFECTIVO_CANCHA', 'TRANSFERENCIA', 'TARJETA') NOT NULL,
+    referencia_pago VARCHAR(80) NULL,
+    monto DECIMAL(8,2) NOT NULL,
+    estado_pago ENUM('PENDIENTE', 'VERIFICADO', 'REEMBOLSADO') NOT NULL DEFAULT 'PENDIENTE',
+    registrado_por INT NULL,
+    fecha_pago TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_pago_reserva FOREIGN KEY (id_reserva) REFERENCES reservas(id_reserva) ON DELETE CASCADE,
+    CONSTRAINT fk_pago_usuario FOREIGN KEY (registrado_por) REFERENCES usuarios(id_usuario) ON DELETE SET NULL
+) ENGINE=InnoDB;
+
+-- 9. TABLA DE RESEÑAS DE CLIENTES
+CREATE TABLE resenas (
+    id_resena INT AUTO_INCREMENT PRIMARY KEY,
+    id_reserva INT NOT NULL UNIQUE,
+    id_cliente INT NOT NULL,
+    id_cancha INT NOT NULL,
+    calificacion TINYINT NOT NULL CHECK (calificacion BETWEEN 1 AND 5),
+    comentario TEXT NOT NULL,
+    fecha_resena TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_resena_reserva FOREIGN KEY (id_reserva) REFERENCES reservas(id_reserva) ON DELETE CASCADE,
+    CONSTRAINT fk_resena_cliente FOREIGN KEY (id_cliente) REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
+    CONSTRAINT fk_resena_cancha FOREIGN KEY (id_cancha) REFERENCES canchas(id_cancha) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+-- ============================================================================
+-- DATOS DE PRUEBA REALISTAS (KICKZONE PANAMÁ)
+-- ============================================================================
+
+INSERT INTO roles (id_rol, nombre_rol, descripcion) VALUES
+(1, 'ADMIN', 'Administrador general del centro deportivo con acceso total y reportes.'),
+(2, 'ENCARGADO', 'Operador de sede encargado de confirmar reservas, pagos y estado de canchas.'),
+(3, 'CLIENTE', 'Usuario final que consulta disponibilidad, reserva canchas y alquila implementos.');
+
+-- Contraseña de prueba para las 4 cuentas iniciales: KickZone2026*
+-- (Generada con password_hash('KickZone2026*', PASSWORD_DEFAULT))
+INSERT INTO usuarios (id_rol, nombre, apellido, correo, telefono, password_hash) VALUES
+(1, 'David', 'Rios', 'admin@kickzone.pa', '6000-1001', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+(2, 'Edgardo', 'Cordoba', 'encargado@kickzone.pa', '6000-1002', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+(3, 'Edward', 'Sanchez', 'edward@correo.pa', '6000-1003', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
+(3, 'Jean', 'Llanten', 'jean@correo.pa', '6000-1004', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
+
+INSERT INTO deportes (id_deporte, nombre, descripcion) VALUES
+(1, 'Fútbol 5', 'Canchas rápidas de grama sintética FIFA Quality para partidos 5 vs 5.'),
+(2, 'Fútbol 7', 'Canchas amplias al aire libre con iluminación LED profesional para 7 vs 7.'),
+(3, 'Pádel', 'Pistas panorámicas de cristal templado y césped fibrilado.'),
+(4, 'Baloncesto', 'Cancha techada de tabloncillo sintético con aros profesionales.');
+
+INSERT INTO canchas (id_deporte, nombre, descripcion, superficie, capacidad_jugadores, tarifa_diurna, tarifa_nocturna, imagen_url) VALUES
+(1, 'Arena KickZone 1 (Techada)', 'Cancha Fútbol 5 techada con grama sintética de última generación y bancas techadas.', 'Grama Sintética', 10, 35.00, 45.00, 'assets/img/futbol5_1.jpg'),
+(1, 'Arena KickZone 2 (VIP)', 'Cancha Fútbol 5 con marcador electrónico, iluminación LED anti-deslumbramiento y zona de hidratación.', 'Grama Sintética', 10, 40.00, 50.00, 'assets/img/futbol5_2.jpg'),
+(2, 'Estadio Norte Fútbol 7', 'Cancha reglamentaria Fútbol 7 ideal para ligas empresariales y torneos nocturnos.', 'Grama Sintética Pro', 14, 55.00, 70.00, 'assets/img/futbol7_1.jpg'),
+(3, 'Pista Pádel Panorámica A', 'Pista de pádel con paredes de vidrio templado de 12mm y reflectores LED.', 'Césped Azul Pádel', 4, 24.00, 32.00, 'assets/img/padel_1.jpg'),
+(3, 'Pista Pádel Panorámica B', 'Pista de pádel climatizada lateralmente con superficie de alto rebote.', 'Césped Azul Pádel', 4, 24.00, 32.00, 'assets/img/padel_2.jpg'),
+(4, 'Duela Central Baloncesto', 'Cancha techada de baloncesto con tableros de acrílico templado y reloj de 24 segundos.', 'Tabloncillo Sintético', 10, 30.00, 38.00, 'assets/img/basket_1.jpg');
+
+INSERT INTO implementos (id_deporte, nombre, descripcion, precio_alquiler, stock_total) VALUES
+(1, 'Balón Profesional Fútbol #5', 'Balón cosido térmicamente de alta presión.', 3.50, 15),
+(1, 'Juego de 10 Petos Numerados', 'Petos lavados y desinfectados (5 neón, 5 azul marino).', 4.00, 12),
+(1, 'Par de Guantes de Portero', 'Guantes con palma de látex de agarre profesional.', 3.00, 8),
+(3, 'Set de 2 Palas de Pádel + Tubo Pelotas', 'Palas de fibra de carbono y 3 pelotas presurizadas.', 8.00, 10),
+(4, 'Balón Oficial Baloncesto #7', 'Balón de cuero compuesto para cancha cubierta.', 3.50, 10);
