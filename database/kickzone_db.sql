@@ -57,7 +57,8 @@ CREATE TABLE canchas (
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_cancha_deporte FOREIGN KEY (id_deporte) REFERENCES deportes(id_deporte) ON UPDATE CASCADE,
     INDEX idx_cancha_deporte (id_deporte),
-    INDEX idx_cancha_estado (estado)
+    INDEX idx_cancha_estado (estado),
+    INDEX idx_cancha_nombre (nombre)
 ) ENGINE=InnoDB;
 
 -- 5. TABLA DE IMPLEMENTOS DEPORTIVOS EN ALQUILER
@@ -69,7 +70,9 @@ CREATE TABLE implementos (
     precio_alquiler DECIMAL(8,2) NOT NULL,
     stock_total INT NOT NULL DEFAULT 10,
     estado ENUM('ACTIVO', 'INACTIVO') NOT NULL DEFAULT 'ACTIVO',
-    CONSTRAINT fk_implemento_deporte FOREIGN KEY (id_deporte) REFERENCES deportes(id_deporte) ON DELETE SET NULL
+    CONSTRAINT fk_implemento_deporte FOREIGN KEY (id_deporte) REFERENCES deportes(id_deporte) ON DELETE SET NULL,
+    INDEX idx_implemento_estado (estado),
+    INDEX idx_implemento_nombre (nombre)
 ) ENGINE=InnoDB;
 
 -- 6. TABLA DE RESERVAS
@@ -117,7 +120,8 @@ CREATE TABLE pagos (
     registrado_por INT NULL,
     fecha_pago TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_pago_reserva FOREIGN KEY (id_reserva) REFERENCES reservas(id_reserva) ON DELETE CASCADE,
-    CONSTRAINT fk_pago_usuario FOREIGN KEY (registrado_por) REFERENCES usuarios(id_usuario) ON DELETE SET NULL
+    CONSTRAINT fk_pago_usuario FOREIGN KEY (registrado_por) REFERENCES usuarios(id_usuario) ON DELETE SET NULL,
+    INDEX idx_pago_estado (estado_pago)
 ) ENGINE=InnoDB;
 
 -- 9. TABLA DE RESEÑAS DE CLIENTES
@@ -131,7 +135,8 @@ CREATE TABLE resenas (
     fecha_resena TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_resena_reserva FOREIGN KEY (id_reserva) REFERENCES reservas(id_reserva) ON DELETE CASCADE,
     CONSTRAINT fk_resena_cliente FOREIGN KEY (id_cliente) REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
-    CONSTRAINT fk_resena_cancha FOREIGN KEY (id_cancha) REFERENCES canchas(id_cancha) ON DELETE CASCADE
+    CONSTRAINT fk_resena_cancha FOREIGN KEY (id_cancha) REFERENCES canchas(id_cancha) ON DELETE CASCADE,
+    INDEX idx_resena_cancha (id_cancha)
 ) ENGINE=InnoDB;
 
 -- ============================================================================
@@ -143,13 +148,16 @@ INSERT INTO roles (id_rol, nombre_rol, descripcion) VALUES
 (2, 'ENCARGADO', 'Operador de sede encargado de confirmar reservas, pagos y estado de canchas.'),
 (3, 'CLIENTE', 'Usuario final que consulta disponibilidad, reserva canchas y alquila implementos.');
 
--- Contraseña de prueba para las 4 cuentas iniciales: KickZone2026*
+-- Contraseña de prueba para TODAS las cuentas iniciales: KickZone2026*
 -- (Generada con password_hash('KickZone2026*', PASSWORD_DEFAULT))
 INSERT INTO usuarios (id_rol, nombre, apellido, correo, telefono, password_hash) VALUES
-(1, 'David', 'Rios', 'admin@kickzone.pa', '6000-1001', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
-(2, 'Edgardo', 'Cordoba', 'encargado@kickzone.pa', '6000-1002', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
-(3, 'Edward', 'Sanchez', 'edward@correo.pa', '6000-1003', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
-(3, 'Jean', 'Llanten', 'jean@correo.pa', '6000-1004', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
+(1, 'David', 'Rios', 'admin@kickzone.pa', '6000-1001', '$2y$10$/oNSI3.dkQvj5G9gARkTRu/MSl6Lv55FBwFGYcvCpxN83/7wQJd46'),
+(2, 'Edgardo', 'Cordoba', 'encargado@kickzone.pa', '6000-1002', '$2y$10$/oNSI3.dkQvj5G9gARkTRu/MSl6Lv55FBwFGYcvCpxN83/7wQJd46'),
+(3, 'Edward', 'Sanchez', 'edward@correo.pa', '6000-1003', '$2y$10$/oNSI3.dkQvj5G9gARkTRu/MSl6Lv55FBwFGYcvCpxN83/7wQJd46'),
+(3, 'Jean', 'Llanten', 'jean@correo.pa', '6000-1004', '$2y$10$/oNSI3.dkQvj5G9gARkTRu/MSl6Lv55FBwFGYcvCpxN83/7wQJd46'),
+(3, 'Ana', 'Pérez', 'ana.perez@correo.pa', '6000-1005', '$2y$10$/oNSI3.dkQvj5G9gARkTRu/MSl6Lv55FBwFGYcvCpxN83/7wQJd46'),
+(3, 'Carlos', 'Mendoza', 'carlos.mendoza@correo.pa', '6000-1006', '$2y$10$/oNSI3.dkQvj5G9gARkTRu/MSl6Lv55FBwFGYcvCpxN83/7wQJd46'),
+(3, 'Lucía', 'Herrera', 'lucia.herrera@correo.pa', '6000-1007', '$2y$10$/oNSI3.dkQvj5G9gARkTRu/MSl6Lv55FBwFGYcvCpxN83/7wQJd46');
 
 INSERT INTO deportes (id_deporte, nombre, descripcion) VALUES
 (1, 'Fútbol 5', 'Canchas rápidas de grama sintética FIFA Quality para partidos 5 vs 5.'),
@@ -171,3 +179,45 @@ INSERT INTO implementos (id_deporte, nombre, descripcion, precio_alquiler, stock
 (1, 'Par de Guantes de Portero', 'Guantes con palma de látex de agarre profesional.', 3.00, 8),
 (3, 'Set de 2 Palas de Pádel + Tubo Pelotas', 'Palas de fibra de carbono y 3 pelotas presurizadas.', 8.00, 10),
 (4, 'Balón Oficial Baloncesto #7', 'Balón de cuero compuesto para cancha cubierta.', 3.50, 10);
+
+-- ----------------------------------------------------------------------------
+-- RESERVAS DE PRUEBA (fechas relativas a hoy para que la agenda siempre tenga datos)
+-- Tarifa nocturna desde las 18:00. total_pagar = subtotal_cancha + subtotal_implementos
+-- ----------------------------------------------------------------------------
+INSERT INTO reservas (id_reserva, codigo_reserva, id_cliente, id_cancha, fecha_reserva, hora_inicio, hora_fin,
+                      es_tarifa_nocturna, subtotal_cancha, subtotal_implementos, total_pagar, notas_cliente, estado) VALUES
+(1, 'KZ-2026-0001', 3, 1, DATE_SUB(CURDATE(), INTERVAL 10 DAY), '19:00:00', '20:00:00', 1, 45.00, 7.50, 52.50, 'Partido de la liga de la oficina', 'COMPLETADA'),
+(2, 'KZ-2026-0002', 4, 4, DATE_SUB(CURDATE(), INTERVAL 7 DAY),  '10:00:00', '11:00:00', 0, 24.00, 8.00, 32.00, NULL, 'COMPLETADA'),
+(3, 'KZ-2026-0003', 5, 3, DATE_SUB(CURDATE(), INTERVAL 5 DAY),  '20:00:00', '21:00:00', 1, 70.00, 0.00, 70.00, 'Cumpleaños, llegamos 10 min antes', 'COMPLETADA'),
+(4, 'KZ-2026-0004', 6, 6, DATE_SUB(CURDATE(), INTERVAL 3 DAY),  '17:00:00', '18:00:00', 0, 30.00, 3.50, 33.50, NULL, 'CANCELADA'),
+(5, 'KZ-2026-0005', 3, 2, CURDATE(), '18:00:00', '19:00:00', 1, 50.00, 4.00, 54.00, NULL, 'CONFIRMADA'),
+(6, 'KZ-2026-0006', 7, 1, CURDATE(), '16:00:00', '17:00:00', 0, 35.00, 0.00, 35.00, 'Primera vez en KickZone', 'PENDIENTE'),
+(7, 'KZ-2026-0007', 5, 5, CURDATE(), '19:00:00', '20:00:00', 1, 32.00, 8.00, 40.00, NULL, 'PENDIENTE'),
+(8, 'KZ-2026-0008', 4, 3, DATE_ADD(CURDATE(), INTERVAL 2 DAY), '21:00:00', '22:00:00', 1, 70.00, 6.50, 76.50, 'Necesitamos guantes de portero', 'CONFIRMADA'),
+(9, 'KZ-2026-0009', 6, 6, DATE_ADD(CURDATE(), INTERVAL 4 DAY), '09:00:00', '10:00:00', 0, 30.00, 0.00, 30.00, NULL, 'PENDIENTE');
+
+INSERT INTO reserva_implementos (id_reserva, id_implemento, cantidad, precio_unitario, subtotal) VALUES
+(1, 1, 1, 3.50, 3.50),
+(1, 2, 1, 4.00, 4.00),
+(2, 4, 1, 8.00, 8.00),
+(4, 5, 1, 3.50, 3.50),
+(5, 2, 1, 4.00, 4.00),
+(7, 4, 1, 8.00, 8.00),
+(8, 1, 1, 3.50, 3.50),
+(8, 3, 1, 3.00, 3.00);
+
+INSERT INTO pagos (id_reserva, metodo_pago, referencia_pago, monto, estado_pago, registrado_por) VALUES
+(1, 'YAPPY', 'YP-884512', 52.50, 'VERIFICADO', 2),
+(2, 'EFECTIVO_CANCHA', NULL, 32.00, 'VERIFICADO', 2),
+(3, 'TARJETA', 'VISA-****4821', 70.00, 'VERIFICADO', 2),
+(4, 'TRANSFERENCIA', 'BG-TR-55120', 33.50, 'REEMBOLSADO', 1),
+(5, 'YAPPY', 'YP-901233', 54.00, 'VERIFICADO', 2),
+(6, 'TRANSFERENCIA', 'BG-TR-56001', 35.00, 'PENDIENTE', NULL),
+(8, 'YAPPY', 'YP-902877', 76.50, 'PENDIENTE', NULL);
+
+-- Reseñas: solo sobre reservas COMPLETADAS (regla del módulo de reseñas verificadas)
+INSERT INTO resenas (id_reserva, id_cliente, id_cancha, calificacion, comentario) VALUES
+(1, 3, 1, 5, 'Grama en excelente estado y la iluminación nocturna es muy buena.'),
+(2, 4, 4, 4, 'Pista muy limpia. Las palas alquiladas estaban en buen estado.'),
+(3, 5, 3, 5, 'Perfecta para torneos, los camerinos impecables.');
+
