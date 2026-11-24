@@ -24,8 +24,14 @@ nocturna automática (desde las 18:00) y alquiler de implementos deportivos con 
 1. Clonar este repositorio dentro de `C:\xampp\htdocs\KickZone` (Windows) o `/Applications/XAMPP/htdocs/KickZone` (macOS).
 2. Iniciar **Apache** y **MySQL** en el panel de control de XAMPP.
 3. Abrir `http://localhost/phpmyadmin/`, ir a la pestaña **SQL** e importar el archivo `database/kickzone_db.sql`.
-4. Si tu MySQL tiene contraseña, ajústala en `config/config.php` (`DB_USER` / `DB_PASS`).
+4. Si tu MySQL usa otro puerto o contraseña, copia `config/config.local.example.php` como `config/config.local.php` y ajústalo (este archivo no se sube a GitHub).
 5. Acceder desde el navegador a `http://localhost/KickZone/`.
+
+### macOS con MAMP
+1. Clonar el repositorio dentro de `/Applications/MAMP/htdocs/KickZone`.
+2. Copiar `config/config.local.example.php` como `config/config.local.php` (ya trae los valores de MAMP: puerto `8889`, usuario `root`, contraseña `root`).
+3. Iniciar MAMP (**Start**), abrir `http://localhost:8888/phpMyAdmin5/` e importar `database/kickzone_db.sql`.
+4. Acceder a `http://localhost:8888/KickZone/`.
 
 ## 🔑 Cuentas de prueba
 

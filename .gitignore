@@ -10,3 +10,6 @@ desktop.ini
 # Archivos temporales y logs
 *.log
 *.tmp
+
+# Configuración local de cada integrante (credenciales)
+config/config.local.php

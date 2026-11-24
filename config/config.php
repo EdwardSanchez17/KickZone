@@ -6,17 +6,24 @@
 
 declare(strict_types=1);
 
-// --- Base de datos ---
-define('DB_HOST', '127.0.0.1');
-define('DB_PORT', '3306');
-define('DB_NAME', 'kickzone_db');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+// --- Configuración local opcional (no se sube a GitHub) ---
+// Cada integrante puede crear config/config.local.php a partir de
+// config/config.local.example.php (por ejemplo, para MAMP en macOS).
+if (is_file(__DIR__ . '/config.local.php')) {
+    require __DIR__ . '/config.local.php';
+}
+
+// --- Base de datos (valores por defecto: XAMPP) ---
+defined('DB_HOST') || define('DB_HOST', '127.0.0.1');
+defined('DB_PORT') || define('DB_PORT', '3306');
+defined('DB_NAME') || define('DB_NAME', 'kickzone_db');
+defined('DB_USER') || define('DB_USER', 'root');
+defined('DB_PASS') || define('DB_PASS', '');
 
 // --- Aplicación ---
 define('APP_NOMBRE', 'KickZone');
 define('APP_ZONA_HORARIA', 'America/Panama');
-define('APP_DEBUG', false); // true solo en desarrollo: muestra errores detallados
+defined('APP_DEBUG') || define('APP_DEBUG', false); // true solo en desarrollo: muestra errores detallados
 
 // --- Seguridad ---
 define('SESION_NOMBRE', 'KZSESSID');
