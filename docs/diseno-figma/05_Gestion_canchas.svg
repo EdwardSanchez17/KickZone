@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="880" viewBox="0 0 1440 880" xmlns:c2pa="http://c2pa.org/manifest"><title>05 Gestión de canchas (CRUD)</title><defs><linearGradient id="gHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12304A"/><stop offset=".6" stop-color="#1C4A70"/><stop offset="1" stop-color="#1E6B4A"/></linearGradient></defs><g id="05 Gestión de canchas (CRUD)"><rect x="0" y="0" width="1440" height="880" rx="0" fill="#F8FAFC"/>
+<g id="Navbar">
+<rect x="0" y="0" width="1440" height="68" rx="0" fill="#12304A"/>
+<circle cx="132" cy="34" r="11" fill="#28A745"/>
+<text x="150" y="41" font-family="Inter, Segoe UI, sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="start">Kick</text>
+<text x="198" y="41" font-family="Inter, Segoe UI, sans-serif" font-size="22" font-weight="800" fill="#28A745" text-anchor="start">Zone</text>
+<text x="290" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="500" fill="#CBD5E1" text-anchor="start">Inicio</text>
+<text x="374.4" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="500" fill="#CBD5E1" text-anchor="start">Dashboard</text>
+<text x="484.0" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="start">Gestión de canchas</text>
+<rect x="484.0" y="52" width="151.20000000000002" height="3" rx="0" fill="#28A745"/>
+<text x="669.2" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="500" fill="#CBD5E1" text-anchor="start">Usuarios</text>
+<text x="1150" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="500" fill="#FFFFFF" text-anchor="end">David Rios</text>
+<rect x="1162" y="24" width="54.0" height="22" rx="11" fill="#28A745"/>
+<text x="1189.0" y="39" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">ADMIN</text>
+<g id="Botón / Salir">
+<rect x="1248" y="16" width="72" height="36" rx="8" fill="#12304A" stroke="#94A3B8" stroke-width="1"/>
+<text x="1284.0" y="39.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Salir</text>
+</g>
+</g>
+<text x="120" y="130" font-family="Inter, Segoe UI, sans-serif" font-size="28" font-weight="800" fill="#12304A" text-anchor="start">Gestión de canchas</text>
+<text x="120" y="156" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="start">Crea, edita, filtra y administra el estado de las canchas del centro.</text>
+<g id="Botón / + Nueva cancha">
+<rect x="1170" y="110" width="150" height="42" rx="8" fill="#28A745"/>
+<text x="1245.0" y="136.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">+ Nueva cancha</text>
+</g>
+<g id="Filtros">
+<rect x="120" y="186" width="1200" height="100" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<g id="Campo / Buscar">
+<text x="144" y="214" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1F2937" text-anchor="start">Buscar</text>
+<rect x="144" y="222" width="560" height="42" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+<text x="158" y="249" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="start">Nombre o superficie…</text>
+</g>
+<g id="Campo / Deporte">
+<text x="728" y="214" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1F2937" text-anchor="start">Deporte</text>
+<rect x="728" y="222" width="250" height="42" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+<text x="742" y="249" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#1F2937" text-anchor="start">Todos ▾</text>
+</g>
+<g id="Campo / Estado">
+<text x="1000" y="214" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1F2937" text-anchor="start">Estado</text>
+<rect x="1000" y="222" width="180" height="42" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+<text x="1014" y="249" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#1F2937" text-anchor="start">Todos ▾</text>
+</g>
+<g id="Botón / Buscar">
+<rect x="1200" y="222" width="96" height="42" rx="8" fill="#12304A"/>
+<text x="1248.0" y="248.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Buscar</text>
+</g>
+</g>
+<g id="Tabla / Canchas">
+<rect x="120" y="310" width="1200" height="388" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="120" y="310" width="1200" height="44" rx="8" fill="#12304A"/>
+<rect x="120" y="340" width="1200" height="14" rx="0" fill="#12304A"/>
+<text x="136" y="338" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">CANCHA</text>
+<text x="436" y="338" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">DEPORTE</text>
+<text x="586" y="338" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">CAPACIDAD</text>
+<text x="706" y="338" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">DÍA</text>
+<text x="826" y="338" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">NOCHE</text>
+<text x="966" y="338" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">ESTADO</text>
+<text x="1166" y="338" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">ACCIONES</text>
+<text x="136" y="387" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Arena KickZone 1 (Techada)</text>
+<text x="436" y="387" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Fútbol 5</text>
+<text x="586" y="387" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">10</text>
+<text x="706" y="387" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$35.00</text>
+<text x="826" y="387" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$45.00</text>
+<rect x="966" y="371" width="90.0" height="22" rx="11" fill="#DCFCE7"/>
+<text x="1011.0" y="386" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#166534" text-anchor="middle">DISPONIBLE</text>
+<text x="1166" y="387" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">✎  🗑</text>
+<rect x="120" y="410" width="1200" height="1" rx="0" fill="#E2E8F0"/>
+<text x="136" y="443" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Arena KickZone 2 (VIP)</text>
+<text x="436" y="443" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Fútbol 5</text>
+<text x="586" y="443" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">10</text>
+<text x="706" y="443" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$40.00</text>
+<text x="826" y="443" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$50.00</text>
+<rect x="966" y="427" width="90.0" height="22" rx="11" fill="#DCFCE7"/>
+<text x="1011.0" y="442" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#166534" text-anchor="middle">DISPONIBLE</text>
+<text x="1166" y="443" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">✎  🗑</text>
+<rect x="120" y="466" width="1200" height="1" rx="0" fill="#E2E8F0"/>
+<text x="136" y="499" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Estadio Norte Fútbol 7</text>
+<text x="436" y="499" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Fútbol 7</text>
+<text x="586" y="499" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">14</text>
+<text x="706" y="499" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$55.00</text>
+<text x="826" y="499" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$70.00</text>
+<rect x="966" y="483" width="90.0" height="22" rx="11" fill="#DCFCE7"/>
+<text x="1011.0" y="498" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#166534" text-anchor="middle">DISPONIBLE</text>
+<text x="1166" y="499" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">✎  🗑</text>
+<rect x="120" y="522" width="1200" height="1" rx="0" fill="#E2E8F0"/>
+<text x="136" y="555" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Pista Pádel Panorámica A</text>
+<text x="436" y="555" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Pádel</text>
+<text x="586" y="555" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">4</text>
+<text x="706" y="555" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$24.00</text>
+<text x="826" y="555" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$32.00</text>
+<rect x="966" y="539" width="90.0" height="22" rx="11" fill="#DCFCE7"/>
+<text x="1011.0" y="554" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#166534" text-anchor="middle">DISPONIBLE</text>
+<text x="1166" y="555" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">✎  🗑</text>
+<rect x="120" y="578" width="1200" height="1" rx="0" fill="#E2E8F0"/>
+<text x="136" y="611" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Pista Pádel Panorámica B</text>
+<text x="436" y="611" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Pádel</text>
+<text x="586" y="611" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">4</text>
+<text x="706" y="611" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$24.00</text>
+<text x="826" y="611" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$32.00</text>
+<rect x="966" y="595" width="111.60000000000001" height="22" rx="11" fill="#FEF3C7"/>
+<text x="1021.8" y="610" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle">MANTENIMIENTO</text>
+<text x="1166" y="611" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">✎  🗑</text>
+<rect x="120" y="634" width="1200" height="1" rx="0" fill="#E2E8F0"/>
+<text x="136" y="667" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Duela Central Baloncesto</text>
+<text x="436" y="667" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Baloncesto</text>
+<text x="586" y="667" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">10</text>
+<text x="706" y="667" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$30.00</text>
+<text x="826" y="667" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$38.00</text>
+<rect x="966" y="651" width="90.0" height="22" rx="11" fill="#DCFCE7"/>
+<text x="1011.0" y="666" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#166534" text-anchor="middle">DISPONIBLE</text>
+<text x="1166" y="667" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">✎  🗑</text>
+</g></g><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpkYjkyODc3Ni0yZjczLTQ2MmEtYjk0Yi0wNjM3ZDMyZjBhZDMAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaBPiLjf6D5cC2pkc7TXzuYcAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo3YmQxMjg4NS0wYjBkLTQ1ZDMtYWQyMC0wYTQzOGY2MjU3YzhscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNo1Meu/mOBAbtzQP3By/VIawAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggLPRtc/Qf6L7U6xAGsrgXI53GHYX0i4QhLtTuxpRx9bGkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaKecw7eIxLEyJSbPj/KirtsAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYILDH1yVhxE/Mq9xtF8R7zyiBzY0ksSsTB8Jqhny85TFBZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GTLCZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmRiOTI4Nzc2LTJmNzMtNDYyYS1iOTRiLTA2MzdkMzJmMGFkMy9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmVlMmU4OGI3LTE5NTUtNDI2Ni05MDc5LTg0ZWI4ZWVkOTE3M3JjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAs9G1z9B/ovtTrEAayuBcjncYdhfSLhCEu1O7GlHH1saJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggBVYJHVJTStZV6b6JZ27ZlqSuHiVwXdCm2IRD2PEUimmiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggf7+mGjeOgo0zJSatpxJwcyiZD8qsz069PzeFQ1iG6Dl0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQNznrBmRG0A1YuSWiQkvoXjt+Q7/9IU37y9c43m4lvvv2BqDS8kQU1RJ/wxll/BN/HB3CJtwA5i4FCwNdB0sNQw=</c2pa:manifest></metadata></svg>

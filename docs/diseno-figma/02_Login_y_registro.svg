@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" xmlns:c2pa="http://c2pa.org/manifest"><title>02 Login y registro</title><defs><linearGradient id="gHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12304A"/><stop offset=".6" stop-color="#1C4A70"/><stop offset="1" stop-color="#1E6B4A"/></linearGradient></defs><g id="02 Login y registro"><rect x="0" y="0" width="1440" height="900" rx="0" fill="#F8FAFC"/>
+<g id="Navbar">
+<rect x="0" y="0" width="1440" height="68" rx="0" fill="#12304A"/>
+<circle cx="132" cy="34" r="11" fill="#28A745"/>
+<text x="150" y="41" font-family="Inter, Segoe UI, sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="start">Kick</text>
+<text x="198" y="41" font-family="Inter, Segoe UI, sans-serif" font-size="22" font-weight="800" fill="#28A745" text-anchor="start">Zone</text>
+<text x="290" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="500" fill="#CBD5E1" text-anchor="start">Inicio</text>
+<text x="374.4" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="500" fill="#CBD5E1" text-anchor="start">Canchas</text>
+<text x="467.2" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="500" fill="#CBD5E1" text-anchor="start">Implementos</text>
+<g id="Botón / Iniciar sesión">
+<rect x="1150" y="16" width="120" height="36" rx="8" fill="#12304A" stroke="#94A3B8" stroke-width="1"/>
+<text x="1210.0" y="39.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Iniciar sesión</text>
+</g>
+<g id="Botón / Registrarse">
+<rect x="1282" y="16" width="110" height="36" rx="8" fill="#28A745"/>
+<text x="1337.0" y="39.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Registrarse</text>
+</g>
+</g>
+<g id="Card / Inicia sesión">
+<rect x="200" y="120" width="480" height="476" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="200" y="120" width="480" height="5" rx="2" fill="#28A745"/>
+<circle cx="440" cy="180" r="20" fill="#28A745"/>
+<text x="440" y="240" font-family="Inter, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#1F2937" text-anchor="middle">Inicia sesión</text>
+<text x="440" y="266" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="middle">Accede a tus reservas y paneles de KickZone</text>
+<g id="Campo / Correo electrónico">
+<text x="240" y="310" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1F2937" text-anchor="start">Correo electrónico</text>
+<rect x="240" y="318" width="400" height="42" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+<text x="254" y="345" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#1F2937" text-anchor="start">admin@kickzone.pa</text>
+</g>
+<g id="Campo / Contraseña">
+<text x="240" y="388" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1F2937" text-anchor="start">Contraseña</text>
+<rect x="240" y="396" width="400" height="42" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+<text x="254" y="423" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#1F2937" text-anchor="start">••••••••••••</text>
+</g>
+<g id="Botón / Entrar">
+<rect x="240" y="472" width="400" height="46" rx="8" fill="#28A745"/>
+<text x="440.0" y="500.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Entrar</text>
+</g>
+<text x="440" y="558" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1C4A70" text-anchor="middle">¿No tienes cuenta? Regístrate aquí</text>
+</g>
+<g id="Card / Crea tu cuenta">
+<rect x="760" y="120" width="480" height="632" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="760" y="120" width="480" height="5" rx="2" fill="#28A745"/>
+<circle cx="1000" cy="180" r="20" fill="#28A745"/>
+<text x="1000" y="240" font-family="Inter, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#1F2937" text-anchor="middle">Crea tu cuenta</text>
+<text x="1000" y="266" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="middle">Reserva canchas en segundos, sin llamadas</text>
+<g id="Campo / Nombre y apellido">
+<text x="800" y="310" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1F2937" text-anchor="start">Nombre y apellido</text>
+<rect x="800" y="318" width="400" height="42" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+<text x="814" y="345" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#1F2937" text-anchor="start">Ana Pérez</text>
+</g>
+<g id="Campo / Correo electrónico">
+<text x="800" y="388" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1F2937" text-anchor="start">Correo electrónico</text>
+<rect x="800" y="396" width="400" height="42" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+<text x="814" y="423" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#1F2937" text-anchor="start">ana.perez@correo.pa</text>
+</g>
+<g id="Campo / Teléfono">
+<text x="800" y="466" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1F2937" text-anchor="start">Teléfono</text>
+<rect x="800" y="474" width="400" height="42" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+<text x="814" y="501" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#1F2937" text-anchor="start">6000-1005</text>
+</g>
+<g id="Campo / Contraseña">
+<text x="800" y="544" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1F2937" text-anchor="start">Contraseña</text>
+<rect x="800" y="552" width="400" height="42" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+<text x="814" y="579" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#1F2937" text-anchor="start">••••••••••</text>
+</g>
+<text x="800" y="614" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#1E8237" text-anchor="start">✓ Mínimo 8 caracteres</text>
+<text x="940" y="614" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#1E8237" text-anchor="start">✓ Una mayúscula</text>
+<text x="1080" y="614" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#64748B" text-anchor="start">Un carácter especial</text>
+<g id="Botón / Crear cuenta">
+<rect x="800" y="638" width="400" height="46" rx="8" fill="#28A745"/>
+<text x="1000.0" y="666.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Crear cuenta</text>
+</g>
+<text x="1000" y="724" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1C4A70" text-anchor="middle">¿Ya tienes cuenta? Inicia sesión</text>
+</g>
+<g id="Alerta / bloqueo">
+<rect x="200" y="620" width="480" height="64" rx="8" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1"/>
+<text x="220" y="648" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#991B1B" text-anchor="start">Cuenta bloqueada temporalmente por múltiples</text>
+<text x="220" y="668" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#991B1B" text-anchor="start">intentos fallidos. Intenta de nuevo en 15 minuto(s).</text>
+</g>
+<text x="200" y="708" font-family="Inter, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#64748B" text-anchor="start">Estado de error tras 5 intentos fallidos</text></g><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYToyMjNlYjA1OS03Yzk1LTRlYWUtYTZhMS1hZmExNmNhZDhjMjUAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaD9q2Gv38A5FC3yyj7q6+MgAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoxYjNmNjEzMS03ODc1LTQ1M2UtYTcxYS03Y2FmOTc1OTJlNjZscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoRN7AtETwaHVv1Yc9VqWZOAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggSvj8gny/poQXbOLCpcsm0/pLrW5u7NVnWaY7LqscthqkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaIaCZjwOBXP3Kelhq41z8LMAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIO9fwhZqWQFlOc+7J+B8qLPwxaNEsHcXNLbqed0Dbpn9ZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GR7bZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjIyM2ViMDU5LTdjOTUtNGVhZS1hNmExLWFmYTE2Y2FkOGMyNS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjk2ODRmZWVmLWJjZTEtNDNkMS05ZWJhLWY5ODhlZjJiZGUwOXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBK+PyCfL+mhBds4sKlyybT+kutbm7s1WdZpjsuqxy2GqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggPgEaeoAZzK18Haju3c2g5vISSTd3+AIDE9uPFSTgUTOiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggTBCZ/gOzh3N5C7rjgR8IYB4uiLO9neBm5cUovThJr3d0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQLgsvf9BMhu+aQoMcwfyEJYpSjmf+QD4xiLrstaVxaA9DsUQIr+P9mShNTnj6e+gbck4y087DiA+oc67NmbdRhs=</c2pa:manifest></metadata></svg>
