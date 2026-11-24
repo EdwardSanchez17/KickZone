@@ -15,7 +15,7 @@ if (esta_autenticado()) {
     redirigir(ruta_inicio_rol($_SESSION['usuario']['rol']));
 }
 
-$errores = [];
+$errores = []; 
 $correo = '';
 
 if (es_post()) {
