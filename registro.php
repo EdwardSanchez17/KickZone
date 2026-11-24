@@ -85,7 +85,7 @@ require __DIR__ . '/includes/header.php';
             <div class="text-center mb-3">
                 <i class="fa-solid fa-user-plus fa-2x text-kz-verde"></i>
                 <h1 class="h4 fw-bold mt-2 mb-0">Crea tu cuenta</h1>
-                <p class="text-muted small">Reserva canchas en segundos, sin llamadas</p>
+                <p class="text-muted small">Reserva tu cancha en segundos</p>
             </div>
 
             <?php if ($errores): ?>

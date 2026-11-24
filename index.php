@@ -68,7 +68,7 @@ require __DIR__ . '/includes/header.php';
                 <span class="badge bg-success bg-opacity-25 text-white mb-3">
                     <i class="fa-solid fa-bolt me-1"></i>Reservas en línea 24/7
                 </span>
-                <h1 class="display-5 mb-3">Tu cancha lista en segundos, sin llamadas ni WhatsApp.</h1>
+                <h1 class="display-5 mb-3">Reserva tu cancha en segundos.</h1>
                 <p class="lead mb-4">
                     Consulta disponibilidad en tiempo real, reserva Fútbol 5, Fútbol 7, Pádel o Baloncesto
                     y alquila implementos en un solo paso.
