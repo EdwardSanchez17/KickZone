@@ -1,0 +1,9 @@
+# KickZone - Reglas generales de Apache
+Options -Indexes
+
+# Bloquear archivos ocultos y de control de versiones
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+ErrorDocument 403 /KickZone/acceso_denegado.php
