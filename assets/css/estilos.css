@@ -1,0 +1,175 @@
+/* ==========================================================================
+   KickZone - Hoja de estilos institucional (Clean Sports UI)
+   Paleta: Azul Marino #12304A · Verde Césped #28A745 · Blanco Humo #F8FAFC · Ámbar #F59E0B
+   ========================================================================== */
+
+:root {
+    --kz-azul: #12304A;
+    --kz-azul-claro: #1C4A70;
+    --kz-verde: #28A745;
+    --kz-verde-oscuro: #1E8237;
+    --kz-fondo: #F8FAFC;
+    --kz-ambar: #F59E0B;
+    --kz-texto: #1F2937;
+    --kz-gris: #64748B;
+    --kz-borde: #E2E8F0;
+    --kz-radio: 8px;
+    --kz-sombra: 0 2px 10px rgba(18, 48, 74, .08);
+    --kz-sombra-hover: 0 8px 24px rgba(18, 48, 74, .16);
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--kz-fondo);
+    color: var(--kz-texto);
+}
+
+/* --- Utilidades de color --- */
+.text-kz-verde { color: var(--kz-verde) !important; }
+.text-kz-ambar { color: var(--kz-ambar) !important; }
+.text-kz-azul  { color: var(--kz-azul) !important; }
+.bg-kz-azul    { background-color: var(--kz-azul) !important; }
+
+/* --- Botones --- */
+.btn-kz-verde {
+    background-color: var(--kz-verde);
+    border-color: var(--kz-verde);
+    color: #fff;
+    font-weight: 600;
+}
+.btn-kz-verde:hover,
+.btn-kz-verde:focus {
+    background-color: var(--kz-verde-oscuro);
+    border-color: var(--kz-verde-oscuro);
+    color: #fff;
+}
+.btn-kz-azul {
+    background-color: var(--kz-azul);
+    border-color: var(--kz-azul);
+    color: #fff;
+    font-weight: 600;
+}
+.btn-kz-azul:hover,
+.btn-kz-azul:focus {
+    background-color: var(--kz-azul-claro);
+    border-color: var(--kz-azul-claro);
+    color: #fff;
+}
+
+/* --- Navbar --- */
+.kz-navbar {
+    background-color: var(--kz-azul);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+}
+.kz-navbar .nav-link { font-weight: 500; }
+.kz-navbar .nav-link.active { color: #fff; border-bottom: 2px solid var(--kz-verde); }
+.kz-badge-rol { background-color: var(--kz-verde); font-size: .65rem; letter-spacing: .04em; }
+
+/* --- Hero portal --- */
+.kz-hero {
+    background: linear-gradient(135deg, var(--kz-azul) 0%, var(--kz-azul-claro) 60%, #1E6B4A 100%);
+    color: #fff;
+    padding: 4.5rem 0 4rem;
+}
+.kz-hero h1 { font-weight: 800; letter-spacing: -.02em; }
+.kz-hero .lead { color: rgba(255, 255, 255, .85); }
+.kz-hero-dato { border-left: 3px solid var(--kz-verde); padding-left: .75rem; }
+
+/* --- Tarjetas --- */
+.kz-card {
+    border: 1px solid var(--kz-borde);
+    border-radius: var(--kz-radio);
+    box-shadow: var(--kz-sombra);
+    background: #fff;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.kz-card:hover { transform: translateY(-3px); box-shadow: var(--kz-sombra-hover); }
+.kz-card-portada {
+    height: 140px;
+    border-radius: var(--kz-radio) var(--kz-radio) 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.2rem;
+    color: rgba(255, 255, 255, .92);
+}
+.kz-portada-1 { background: linear-gradient(135deg, #1E8237, #28A745); }   /* Fútbol 5 */
+.kz-portada-2 { background: linear-gradient(135deg, #12304A, #1E6B4A); }   /* Fútbol 7 */
+.kz-portada-3 { background: linear-gradient(135deg, #1C4A70, #3B82F6); }   /* Pádel */
+.kz-portada-4 { background: linear-gradient(135deg, #B45309, #F59E0B); }   /* Baloncesto */
+.kz-portada-0 { background: linear-gradient(135deg, #334155, #64748B); }
+
+.kz-tarifa-dia   { color: var(--kz-verde-oscuro); font-weight: 700; }
+.kz-tarifa-noche { color: var(--kz-ambar); font-weight: 700; }
+.kz-estrellas    { color: var(--kz-ambar); }
+
+/* --- Filtros (chips) --- */
+.kz-filtros .btn { border-radius: 999px; font-weight: 500; }
+.kz-filtros .btn.active { background-color: var(--kz-azul); border-color: var(--kz-azul); color: #fff; }
+
+/* --- Estados --- */
+.kz-estado { font-size: .72rem; font-weight: 600; letter-spacing: .03em; }
+.kz-estado-DISPONIBLE,
+.kz-estado-ACTIVO,
+.kz-estado-CONFIRMADA,
+.kz-estado-VERIFICADO { background-color: #DCFCE7; color: #166534; }
+.kz-estado-PENDIENTE,
+.kz-estado-MANTENIMIENTO { background-color: #FEF3C7; color: #92400E; }
+.kz-estado-COMPLETADA { background-color: #DBEAFE; color: #1E40AF; }
+.kz-estado-CANCELADA,
+.kz-estado-INACTIVA,
+.kz-estado-INACTIVO,
+.kz-estado-REEMBOLSADO { background-color: #FEE2E2; color: #991B1B; }
+
+/* --- Panel / dashboards --- */
+.kz-titulo-seccion { font-weight: 800; color: var(--kz-azul); }
+.kz-kpi {
+    border-radius: var(--kz-radio);
+    background: #fff;
+    border: 1px solid var(--kz-borde);
+    box-shadow: var(--kz-sombra);
+    padding: 1.1rem 1.25rem;
+}
+.kz-kpi .kz-kpi-icono {
+    width: 46px; height: 46px;
+    border-radius: 10px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 1.25rem;
+}
+.kz-kpi .kz-kpi-valor { font-size: 1.6rem; font-weight: 800; color: var(--kz-azul); line-height: 1.1; }
+.kz-kpi .kz-kpi-label { font-size: .8rem; color: var(--kz-gris); text-transform: uppercase; letter-spacing: .04em; }
+.kz-icono-verde { background: #DCFCE7; color: var(--kz-verde-oscuro); }
+.kz-icono-azul  { background: #DBEAFE; color: var(--kz-azul); }
+.kz-icono-ambar { background: #FEF3C7; color: #B45309; }
+.kz-icono-rojo  { background: #FEE2E2; color: #B91C1C; }
+
+.kz-tabla thead th {
+    background-color: var(--kz-azul);
+    color: #fff;
+    font-weight: 600;
+    font-size: .82rem;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    border: 0;
+}
+.kz-tabla td { vertical-align: middle; }
+
+/* --- Autenticación --- */
+.kz-auth-wrapper { max-width: 460px; }
+.kz-auth-card { border-top: 4px solid var(--kz-verde); }
+.kz-requisitos li { font-size: .82rem; color: var(--kz-gris); }
+.kz-requisitos li.ok { color: var(--kz-verde-oscuro); }
+.kz-requisitos li.ok::before { content: "✓ "; }
+
+/* --- Footer --- */
+.kz-footer { background-color: var(--kz-azul); color: #fff; }
+.kz-footer a { color: rgba(255, 255, 255, .75); text-decoration: none; }
+.kz-footer a:hover { color: #fff; }
+
+/* --- Formularios --- */
+.form-label { font-weight: 600; font-size: .9rem; }
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--kz-verde);
+    box-shadow: 0 0 0 .2rem rgba(40, 167, 69, .2);
+}
