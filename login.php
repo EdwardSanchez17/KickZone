@@ -35,7 +35,7 @@ if (es_post()) {
             'SELECT u.id_usuario, u.nombre, u.apellido, u.correo, u.password_hash, u.estado,
                     u.intentos_fallidos, u.bloqueado_hasta, r.nombre_rol,
                     (u.bloqueado_hasta IS NOT NULL AND u.bloqueado_hasta > NOW()) AS esta_bloqueado,
-                    GREATEST(TIMESTAMPDIFF(MINUTE, NOW(), u.bloqueado_hasta), 0) + 1 AS minutos_restantes
+                    GREATEST(CEIL(TIMESTAMPDIFF(SECOND, NOW(), u.bloqueado_hasta) / 60), 1) AS minutos_restantes
                FROM usuarios u
                JOIN roles r ON r.id_rol = u.id_rol
               WHERE u.correo = :correo
