@@ -2,7 +2,7 @@
 /**
  * KickZone - Agenda del día para el Encargado de sede.
  * Acceso: ENCARGADO y ADMIN. Muestra las reservas de la fecha elegida
- * y el estado de cada cancha. (Confirmar/verificar pagos llega en la Entrega 3.)
+ * y el estado de cada cancha. Las acciones (confirmar, cobrar, completar) están en encargado/reservas.php.
  */
 
 declare(strict_types=1);
@@ -61,6 +61,9 @@ require __DIR__ . '/../includes/header.php';
         <form method="get" action="<?= e(url('encargado/dashboard.php')) ?>" class="d-flex gap-2">
             <input type="date" name="fecha" class="form-control" value="<?= e($fecha) ?>" aria-label="Fecha de la agenda">
             <button class="btn btn-kz-azul"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <a href="<?= e(url('encargado/reservas.php?fecha=' . urlencode($fecha))) ?>" class="btn btn-kz-verde text-nowrap">
+                <i class="fa-solid fa-list-check me-1"></i>Gestionar
+            </a>
         </form>
     </div>
 
