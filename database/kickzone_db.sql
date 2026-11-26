@@ -70,6 +70,7 @@ CREATE TABLE implementos (
     precio_alquiler DECIMAL(8,2) NOT NULL,
     stock_total INT NOT NULL DEFAULT 10,
     estado ENUM('ACTIVO', 'INACTIVO') NOT NULL DEFAULT 'ACTIVO',
+    CONSTRAINT chk_implemento_stock CHECK (stock_total >= 0),
     CONSTRAINT fk_implemento_deporte FOREIGN KEY (id_deporte) REFERENCES deportes(id_deporte) ON DELETE SET NULL,
     INDEX idx_implemento_estado (estado),
     INDEX idx_implemento_nombre (nombre)
@@ -91,10 +92,14 @@ CREATE TABLE reservas (
     notas_cliente VARCHAR(255) NULL,
     estado ENUM('PENDIENTE', 'CONFIRMADA', 'COMPLETADA', 'CANCELADA') NOT NULL DEFAULT 'PENDIENTE',
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_actualizacion TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT chk_reserva_horario CHECK (hora_fin > hora_inicio),
+    CONSTRAINT chk_reserva_total CHECK (total_pagar >= 0),
     CONSTRAINT fk_reserva_cliente FOREIGN KEY (id_cliente) REFERENCES usuarios(id_usuario) ON UPDATE CASCADE,
     CONSTRAINT fk_reserva_cancha FOREIGN KEY (id_cancha) REFERENCES canchas(id_cancha) ON UPDATE CASCADE,
     INDEX idx_reserva_fecha_cancha (id_cancha, fecha_reserva, estado),
-    INDEX idx_reserva_cliente (id_cliente)
+    INDEX idx_reserva_cliente (id_cliente),
+    INDEX idx_reserva_fecha_estado (fecha_reserva, estado)
 ) ENGINE=InnoDB;
 
 -- 7. TABLA DETALLE DE IMPLEMENTOS ALQUILADOS POR RESERVA
@@ -105,6 +110,7 @@ CREATE TABLE reserva_implementos (
     cantidad INT NOT NULL DEFAULT 1,
     precio_unitario DECIMAL(8,2) NOT NULL,
     subtotal DECIMAL(8,2) NOT NULL,
+    CONSTRAINT chk_detalle_cantidad CHECK (cantidad > 0),
     CONSTRAINT fk_det_reserva FOREIGN KEY (id_reserva) REFERENCES reservas(id_reserva) ON DELETE CASCADE,
     CONSTRAINT fk_det_implemento FOREIGN KEY (id_implemento) REFERENCES implementos(id_implemento) ON UPDATE CASCADE
 ) ENGINE=InnoDB;
