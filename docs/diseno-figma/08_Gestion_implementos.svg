@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="860" viewBox="0 0 1440 860"><title>08 Gestión de implementos (CRUD)</title><defs><linearGradient id="gHero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12304A"/><stop offset=".6" stop-color="#1C4A70"/><stop offset="1" stop-color="#1E6B4A"/></linearGradient></defs><g id="08 Gestión de implementos (CRUD)"><rect x="0" y="0" width="1440" height="860" rx="0" fill="#F8FAFC"/>
+<g id="Navbar">
+<rect x="0" y="0" width="1440" height="68" rx="0" fill="#12304A"/>
+<circle cx="132" cy="34" r="11" fill="#28A745"/>
+<text x="150" y="41" font-family="Inter, Segoe UI, sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="start">Kick</text>
+<text x="198" y="41" font-family="Inter, Segoe UI, sans-serif" font-size="22" font-weight="800" fill="#28A745" text-anchor="start">Zone</text>
+<text x="290" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="500" fill="#CBD5E1" text-anchor="start">Inicio</text>
+<text x="374.4" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="500" fill="#CBD5E1" text-anchor="start">Dashboard</text>
+<text x="484.0" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="500" fill="#CBD5E1" text-anchor="start">Canchas</text>
+<text x="576.8" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="start">Implementos</text>
+<rect x="576.8" y="52" width="92.4" height="3" rx="0" fill="#28A745"/>
+<text x="703.1999999999999" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="500" fill="#CBD5E1" text-anchor="start">Reservas</text>
+<text x="804.4" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="15" font-weight="500" fill="#CBD5E1" text-anchor="start">Usuarios</text>
+<text x="1150" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="500" fill="#FFFFFF" text-anchor="end">David Rios</text>
+<rect x="1162" y="24" width="54.0" height="22" rx="11" fill="#28A745"/>
+<text x="1189.0" y="39" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">ADMIN</text>
+<g id="Botón / Salir">
+<rect x="1248" y="16" width="72" height="36" rx="8" fill="#12304A" stroke="#94A3B8" stroke-width="1"/>
+<text x="1284.0" y="39.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Salir</text>
+</g>
+</g>
+<text x="120" y="130" font-family="Inter, Segoe UI, sans-serif" font-size="28" font-weight="800" fill="#12304A" text-anchor="start">Gestión de implementos</text>
+<text x="120" y="156" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="start">Inventario de implementos en alquiler, precios y stock.</text>
+<g id="Botón / + Nuevo implemento">
+<rect x="1140" y="110" width="180" height="42" rx="8" fill="#28A745"/>
+<text x="1230.0" y="136.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">+ Nuevo implemento</text>
+</g>
+<g id="Filtros">
+<rect x="120" y="186" width="1200" height="100" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<g id="Campo / Buscar">
+<text x="144" y="214" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1F2937" text-anchor="start">Buscar</text>
+<rect x="144" y="222" width="520" height="42" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+<text x="158" y="249" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#64748B" text-anchor="start">Nombre o descripción…</text>
+</g>
+<g id="Campo / Deporte">
+<text x="688" y="214" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1F2937" text-anchor="start">Deporte</text>
+<rect x="688" y="222" width="250" height="42" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+<text x="702" y="249" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#1F2937" text-anchor="start">Todos ▾</text>
+</g>
+<g id="Campo / Estado">
+<text x="962" y="214" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#1F2937" text-anchor="start">Estado</text>
+<rect x="962" y="222" width="220" height="42" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+<text x="976" y="249" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="400" fill="#1F2937" text-anchor="start">Todos ▾</text>
+</g>
+<g id="Botón / Buscar">
+<rect x="1204" y="222" width="92" height="42" rx="8" fill="#12304A"/>
+<text x="1250.0" y="248.0" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Buscar</text>
+</g>
+</g>
+<g id="Tabla / Implementos">
+<rect x="120" y="310" width="1200" height="388" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="120" y="310" width="1200" height="44" rx="8" fill="#12304A"/>
+<rect x="120" y="340" width="1200" height="14" rx="0" fill="#12304A"/>
+<text x="136" y="338" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">IMPLEMENTO</text>
+<text x="436" y="338" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">DEPORTE</text>
+<text x="596" y="338" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">PRECIO</text>
+<text x="706" y="338" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">STOCK</text>
+<text x="806" y="338" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">ALQUILADO</text>
+<text x="926" y="338" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">ESTADO</text>
+<text x="1096" y="338" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="start">ACCIONES</text>
+<text x="136" y="387" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Balón Profesional Fútbol #5</text>
+<text x="436" y="387" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Fútbol 5</text>
+<text x="596" y="387" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$3.50</text>
+<text x="706" y="387" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">15</text>
+<text x="806" y="387" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">3</text>
+<rect x="926" y="371" width="61.2" height="22" rx="11" fill="#DCFCE7"/>
+<text x="956.6" y="386" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#166534" text-anchor="middle">ACTIVO</text>
+<text x="1096" y="387" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">✎  👁  🗑</text>
+<rect x="120" y="410" width="1200" height="1" rx="0" fill="#E2E8F0"/>
+<text x="136" y="443" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Juego de 10 Petos Numerados</text>
+<text x="436" y="443" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Fútbol 5</text>
+<text x="596" y="443" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$4.00</text>
+<text x="706" y="443" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">12</text>
+<text x="806" y="443" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">4</text>
+<rect x="926" y="427" width="61.2" height="22" rx="11" fill="#DCFCE7"/>
+<text x="956.6" y="442" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#166534" text-anchor="middle">ACTIVO</text>
+<text x="1096" y="443" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">✎  👁  🗑</text>
+<rect x="120" y="466" width="1200" height="1" rx="0" fill="#E2E8F0"/>
+<text x="136" y="499" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Par de Guantes de Portero</text>
+<text x="436" y="499" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Fútbol 5</text>
+<text x="596" y="499" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$3.00</text>
+<text x="706" y="499" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">8</text>
+<text x="806" y="499" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">1</text>
+<rect x="926" y="483" width="61.2" height="22" rx="11" fill="#DCFCE7"/>
+<text x="956.6" y="498" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#166534" text-anchor="middle">ACTIVO</text>
+<text x="1096" y="499" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">✎  👁  🗑</text>
+<rect x="120" y="522" width="1200" height="1" rx="0" fill="#E2E8F0"/>
+<text x="136" y="555" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Set de 2 Palas de Pádel + Tubo</text>
+<text x="436" y="555" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Pádel</text>
+<text x="596" y="555" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$8.00</text>
+<text x="706" y="555" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">10</text>
+<text x="806" y="555" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">2</text>
+<rect x="926" y="539" width="61.2" height="22" rx="11" fill="#DCFCE7"/>
+<text x="956.6" y="554" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#166534" text-anchor="middle">ACTIVO</text>
+<text x="1096" y="555" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">✎  👁  🗑</text>
+<rect x="120" y="578" width="1200" height="1" rx="0" fill="#E2E8F0"/>
+<text x="136" y="611" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Balón Oficial Baloncesto #7</text>
+<text x="436" y="611" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Baloncesto</text>
+<text x="596" y="611" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$3.50</text>
+<text x="706" y="611" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">10</text>
+<text x="806" y="611" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">1</text>
+<rect x="926" y="595" width="61.2" height="22" rx="11" fill="#DCFCE7"/>
+<text x="956.6" y="610" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#166534" text-anchor="middle">ACTIVO</text>
+<text x="1096" y="611" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">✎  👁  🗑</text>
+<rect x="120" y="634" width="1200" height="1" rx="0" fill="#E2E8F0"/>
+<text x="136" y="667" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Conos de entrenamiento x10</text>
+<text x="436" y="667" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">Multideporte</text>
+<text x="596" y="667" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">$3.00</text>
+<text x="706" y="667" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">6</text>
+<text x="806" y="667" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">0</text>
+<rect x="926" y="651" width="75.6" height="22" rx="11" fill="#FEE2E2"/>
+<text x="963.8" y="666" font-family="Inter, Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#991B1B" text-anchor="middle">INACTIVO</text>
+<text x="1096" y="667" font-family="Inter, Segoe UI, sans-serif" font-size="13" font-weight="500" fill="#1F2937" text-anchor="start">✎  👁  🗑</text>
+</g></g></svg>
