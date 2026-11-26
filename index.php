@@ -147,7 +147,7 @@ require __DIR__ . '/includes/header.php';
                             </div>
                         </div>
                         <?php if ($c['estado'] === 'DISPONIBLE'): ?>
-                            <a href="<?= e(url(esta_autenticado() ? 'cliente/panel.php' : 'login.php')) ?>" class="btn btn-kz-verde w-100 mt-3">
+                            <a href="<?= e(url(tiene_rol(ROL_CLIENTE) ? 'cliente/reservar.php?cancha=' . (int) $c['id_cancha'] : (esta_autenticado() ? ruta_inicio_rol($_SESSION['usuario']['rol']) : 'login.php'))) ?>" class="btn btn-kz-verde w-100 mt-3">
                                 <i class="fa-solid fa-calendar-plus me-1"></i>Ver horarios y reservar
                             </a>
                         <?php else: ?>

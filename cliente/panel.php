@@ -14,7 +14,7 @@ $pdo = db();
 $idCliente = (int) $_SESSION['usuario']['id'];
 
 $stmt = $pdo->prepare(
-    "SELECT r.codigo_reserva, r.fecha_reserva, r.hora_inicio, r.hora_fin, r.es_tarifa_nocturna,
+    "SELECT r.id_reserva, r.codigo_reserva, r.fecha_reserva, r.hora_inicio, r.hora_fin, r.es_tarifa_nocturna,
             r.total_pagar, r.estado, c.nombre AS cancha, d.nombre AS deporte,
             (SELECT p.estado_pago FROM pagos p WHERE p.id_reserva = r.id_reserva ORDER BY p.id_pago DESC LIMIT 1) AS estado_pago
        FROM reservas r
@@ -35,8 +35,13 @@ require __DIR__ . '/../includes/header.php';
 ?>
 
 <div class="container py-4">
-    <h1 class="h3 kz-titulo-seccion mb-1"><i class="fa-solid fa-calendar-days me-2"></i>Mis reservas</h1>
-    <p class="text-muted">Hola, <?= e($_SESSION['usuario']['nombre']) ?>. Aquí tienes el historial de tus reservas.</p>
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <div>
+            <h1 class="h3 kz-titulo-seccion mb-1"><i class="fa-solid fa-calendar-days me-2"></i>Mis reservas</h1>
+            <p class="text-muted mb-0">Hola, <?= e($_SESSION['usuario']['nombre']) ?>. Aquí tienes el historial de tus reservas.</p>
+        </div>
+        <a href="<?= e(url('cliente/reservar.php')) ?>" class="btn btn-kz-verde"><i class="fa-solid fa-calendar-plus me-1"></i>Nueva reserva</a>
+    </div>
 
     <div class="row g-3 mb-4">
         <div class="col-sm-4">
@@ -61,7 +66,7 @@ require __DIR__ . '/../includes/header.php';
 
     <div class="alert alert-info small">
         <i class="fa-solid fa-circle-info me-1"></i>
-        El módulo de nuevas reservas con tarifa nocturna e implementos se habilita en la siguiente entrega.
+        Puedes cancelar sin costo hasta 2 horas antes del inicio. Los pagos los verifica el encargado de sede.
     </div>
 
     <div class="table-responsive card kz-card">
@@ -75,11 +80,12 @@ require __DIR__ . '/../includes/header.php';
                 <th class="text-end">Total</th>
                 <th>Pago</th>
                 <th>Estado</th>
+                <th class="text-end">Acciones</th>
             </tr>
             </thead>
             <tbody>
             <?php if (!$reservas): ?>
-                <tr><td colspan="7" class="text-center text-muted py-4">Aún no tienes reservas. <a href="<?= e(url('index.php#canchas')) ?>">Explora las canchas</a>.</td></tr>
+                <tr><td colspan="8" class="text-center text-muted py-4">Aún no tienes reservas. <a href="<?= e(url('cliente/reservar.php')) ?>">Haz tu primera reserva</a>.</td></tr>
             <?php endif; ?>
             <?php foreach ($reservas as $r): ?>
                 <tr>
@@ -101,6 +107,18 @@ require __DIR__ . '/../includes/header.php';
                         <?php endif; ?>
                     </td>
                     <td><span class="badge kz-estado kz-estado-<?= e($r['estado']) ?>"><?= e($r['estado']) ?></span></td>
+                    <td class="text-end text-nowrap">
+                        <a href="<?= e(url('cliente/comprobante.php?codigo=' . urlencode($r['codigo_reserva']))) ?>"
+                           class="btn btn-sm btn-outline-primary" title="Ver comprobante"><i class="fa-solid fa-receipt"></i></a>
+                        <?php if (in_array($r['estado'], ['PENDIENTE', 'CONFIRMADA'], true)): ?>
+                            <form method="post" action="<?= e(url('cliente/cancelar.php')) ?>" class="d-inline"
+                                  data-confirmar="¿Cancelar la reserva <?= e($r['codigo_reserva']) ?>?">
+                                <?= csrf_campo() ?>
+                                <input type="hidden" name="id_reserva" value="<?= (int) $r['id_reserva'] ?>">
+                                <button class="btn btn-sm btn-outline-danger" title="Cancelar"><i class="fa-solid fa-ban"></i></button>
+                            </form>
+                        <?php endif; ?>
+                    </td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
