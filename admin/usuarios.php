@@ -25,9 +25,9 @@ if (es_post()) {
 
     if (!$idUsuario) {
         flash('danger', 'Usuario no válido.');
-    } elseif ($idUsuario === $idPropio && in_array($accion, ['rol', 'estado'], true)) {
+    } elseif ($idUsuario === $idPropio && in_array($accion, ['rol', 'estado', 'eliminar'], true)) {
         // Evita que el administrador se quite el acceso a sí mismo por error.
-        flash('warning', 'No puedes cambiar tu propio rol ni desactivar tu propia cuenta.');
+        flash('warning', 'No puedes cambiar tu propio rol, desactivar ni eliminar tu propia cuenta.');
     } elseif ($accion === 'rol') {
         $idRol = filter_var($_POST['id_rol'] ?? null, FILTER_VALIDATE_INT);
         if ($idRol === false || !array_key_exists($idRol, $roles)) {
@@ -50,6 +50,20 @@ if (es_post()) {
         $pdo->prepare('UPDATE usuarios SET intentos_fallidos = 0, bloqueado_hasta = NULL WHERE id_usuario = :id')
             ->execute([':id' => $idUsuario]);
         flash('success', 'Bloqueo por intentos fallidos eliminado.');
+    } elseif ($accion === 'eliminar') {
+        // Con historial de reservas o pagos no se elimina: se perdería la trazabilidad.
+        $uso = $pdo->prepare(
+            'SELECT (SELECT COUNT(*) FROM reservas WHERE id_cliente = :id1)
+                  + (SELECT COUNT(*) FROM pagos WHERE registrado_por = :id2)'
+        );
+        $uso->execute([':id1' => $idUsuario, ':id2' => $idUsuario]);
+        if ((int) $uso->fetchColumn() > 0) {
+            flash('warning', 'El usuario tiene reservas o pagos registrados y no puede eliminarse. Desactívalo en su lugar.');
+        } else {
+            $del = $pdo->prepare('DELETE FROM usuarios WHERE id_usuario = :id');
+            $del->execute([':id' => $idUsuario]);
+            flash($del->rowCount() ? 'success' : 'danger', $del->rowCount() ? 'Usuario eliminado.' : 'El usuario no existe.');
+        }
     } else {
         flash('danger', 'Acción no reconocida.');
     }
@@ -96,8 +110,13 @@ require __DIR__ . '/../includes/header.php';
 ?>
 
 <div class="container py-4">
-    <h1 class="h3 kz-titulo-seccion mb-0"><i class="fa-solid fa-users-gear me-2"></i>Gestión de usuarios</h1>
-    <p class="text-muted small">Cambia roles, activa o desactiva cuentas y libera bloqueos por intentos fallidos.</p>
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <div>
+            <h1 class="h3 kz-titulo-seccion mb-0"><i class="fa-solid fa-users-gear me-2"></i>Gestión de usuarios</h1>
+            <p class="text-muted small mb-0">Crea, edita y elimina usuarios; cambia roles, estados y libera bloqueos.</p>
+        </div>
+        <a href="<?= e(url('admin/usuario_form.php')) ?>" class="btn btn-kz-verde"><i class="fa-solid fa-user-plus me-1"></i>Nuevo usuario</a>
+    </div>
 
     <form method="get" action="<?= e(url('admin/usuarios.php')) ?>" class="card kz-card p-3 mb-3">
         <div class="row g-2 align-items-end">
@@ -158,6 +177,8 @@ require __DIR__ . '/../includes/header.php';
                     </td>
                     <td><span class="badge kz-estado kz-estado-<?= e($u['estado']) ?>"><?= e($u['estado']) ?></span></td>
                     <td class="text-end text-nowrap">
+                        <a href="<?= e(url('admin/usuario_form.php?id=' . (int) $u['id_usuario'])) ?>"
+                           class="btn btn-sm btn-outline-primary" title="Editar"><i class="fa-solid fa-pen"></i></a>
                         <?php if ((int) $u['bloqueado'] === 1): ?>
                             <form method="post" action="<?= e(url('admin/usuarios.php')) ?>" class="d-inline">
                                 <?= csrf_campo() ?>
@@ -178,6 +199,13 @@ require __DIR__ . '/../includes/header.php';
                                         title="<?= $nuevo === 'INACTIVO' ? 'Desactivar' : 'Activar' ?>">
                                     <i class="fa-solid <?= $nuevo === 'INACTIVO' ? 'fa-user-slash' : 'fa-user-check' ?>"></i>
                                 </button>
+                            </form>
+                            <form method="post" action="<?= e(url('admin/usuarios.php')) ?>" class="d-inline"
+                                  data-confirmar="¿Eliminar a <?= e($u['nombre'] . ' ' . $u['apellido']) ?>? Esta acción no se puede deshacer.">
+                                <?= csrf_campo() ?>
+                                <input type="hidden" name="accion" value="eliminar">
+                                <input type="hidden" name="id_usuario" value="<?= (int) $u['id_usuario'] ?>">
+                                <button class="btn btn-sm btn-outline-danger" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         <?php endif; ?>
                     </td>
