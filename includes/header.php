@@ -43,16 +43,22 @@ $claseActivo = static fn(string $clave): string => $activo === $clave ? ' active
         <div class="collapse navbar-collapse" id="menuPrincipal">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link<?= $claseActivo('inicio') ?>" href="<?= e(url('index.php')) ?>">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link<?= $claseActivo('canchas') ?>" href="<?= e(url('index.php#canchas')) ?>">Canchas</a></li>
-                <li class="nav-item"><a class="nav-link<?= $claseActivo('implementos') ?>" href="<?= e(url('index.php#implementos')) ?>">Implementos</a></li>
+                <?php if (!tiene_rol(ROL_ADMIN, ROL_ENCARGADO)): ?>
+                    <li class="nav-item"><a class="nav-link<?= $claseActivo('canchas') ?>" href="<?= e(url('index.php#canchas')) ?>">Canchas</a></li>
+                    <li class="nav-item"><a class="nav-link<?= $claseActivo('implementos') ?>" href="<?= e(url('index.php#implementos')) ?>">Implementos</a></li>
+                <?php endif; ?>
 
                 <?php if (tiene_rol(ROL_ADMIN)): ?>
                     <li class="nav-item"><a class="nav-link<?= $claseActivo('dashboard') ?>" href="<?= e(url('admin/dashboard.php')) ?>">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link<?= $claseActivo('admin_canchas') ?>" href="<?= e(url('admin/canchas.php')) ?>">Gestión de canchas</a></li>
+                    <li class="nav-item"><a class="nav-link<?= $claseActivo('admin_canchas') ?>" href="<?= e(url('admin/canchas.php')) ?>">Canchas</a></li>
+                    <li class="nav-item"><a class="nav-link<?= $claseActivo('implementos_admin') ?>" href="<?= e(url('admin/implementos.php')) ?>">Implementos</a></li>
+                    <li class="nav-item"><a class="nav-link<?= $claseActivo('reservas_gestion') ?>" href="<?= e(url('encargado/reservas.php')) ?>">Reservas</a></li>
                     <li class="nav-item"><a class="nav-link<?= $claseActivo('usuarios') ?>" href="<?= e(url('admin/usuarios.php')) ?>">Usuarios</a></li>
                 <?php elseif (tiene_rol(ROL_ENCARGADO)): ?>
                     <li class="nav-item"><a class="nav-link<?= $claseActivo('agenda') ?>" href="<?= e(url('encargado/dashboard.php')) ?>">Agenda del día</a></li>
+                    <li class="nav-item"><a class="nav-link<?= $claseActivo('reservas_gestion') ?>" href="<?= e(url('encargado/reservas.php')) ?>">Reservas y pagos</a></li>
                 <?php elseif (tiene_rol(ROL_CLIENTE)): ?>
+                    <li class="nav-item"><a class="nav-link<?= $claseActivo('reservar') ?>" href="<?= e(url('cliente/reservar.php')) ?>">Reservar</a></li>
                     <li class="nav-item"><a class="nav-link<?= $claseActivo('mis_reservas') ?>" href="<?= e(url('cliente/panel.php')) ?>">Mis reservas</a></li>
                 <?php endif; ?>
             </ul>

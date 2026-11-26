@@ -62,6 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Botón de imprimir comprobante: <button data-imprimir>
+    document.querySelectorAll('[data-imprimir]').forEach((boton) => {
+        boton.addEventListener('click', () => window.print());
+    });
+
     // Enviar automáticamente los filtros con <select data-autosubmit>
     document.querySelectorAll('select[data-autosubmit]').forEach((select) => {
         select.addEventListener('change', () => select.form && select.form.submit());
