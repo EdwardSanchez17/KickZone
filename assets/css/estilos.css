@@ -173,3 +173,57 @@ body {
     border-color: var(--kz-verde);
     box-shadow: 0 0 0 .2rem rgba(40, 167, 69, .2);
 }
+
+/* --- Reserva: bloques horarios --- */
+.kz-bloques {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+    gap: .5rem;
+}
+.kz-bloques-error { outline: 2px solid #DC3545; outline-offset: 4px; border-radius: var(--kz-radio); }
+.kz-bloque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .55rem .25rem;
+    border: 1px solid #CBD5E1;
+    border-radius: var(--kz-radio);
+    background: #fff;
+    cursor: pointer;
+    transition: border-color .15s, box-shadow .15s, background-color .15s;
+}
+.kz-bloque:hover { border-color: var(--kz-verde); }
+.kz-bloque-hora { font-weight: 800; font-size: 1.05rem; color: var(--kz-azul); }
+.kz-bloque-estado { font-size: .72rem; font-weight: 600; color: var(--kz-gris); }
+.kz-bloque-noche { background: #FFFBEB; border-color: #FCD34D; }
+.kz-bloque-noche .kz-bloque-estado { color: #92400E; }
+.kz-bloque-ocupado,
+.kz-bloque-pasado { background: #F1F5F9; border-color: var(--kz-borde); cursor: not-allowed; opacity: .6; }
+.kz-bloque-ocupado .kz-bloque-hora,
+.kz-bloque-pasado .kz-bloque-hora { color: #94A3B8; text-decoration: line-through; }
+.btn-check:checked + .kz-bloque {
+    border: 2px solid var(--kz-verde);
+    background: #DCFCE7;
+    box-shadow: 0 0 0 .2rem rgba(40, 167, 69, .2);
+}
+.btn-check:checked + .kz-bloque-noche { border-color: var(--kz-ambar); background: #FEF3C7; box-shadow: 0 0 0 .2rem rgba(245, 158, 11, .25); }
+.btn-check:focus-visible + .kz-bloque { box-shadow: 0 0 0 .25rem rgba(18, 48, 74, .35); }
+
+.kz-cantidad { width: 76px; }
+.kz-implemento.kz-agotado { opacity: .55; }
+.kz-resumen { position: sticky; top: 88px; }
+.kz-input-ref { width: 90px; }
+
+/* --- Comprobante --- */
+.kz-comprobante { max-width: 760px; overflow: hidden; }
+.kz-comprobante-header { background: var(--kz-azul); color: #fff; padding: 1.25rem 1.5rem; }
+.kz-comprobante-titulo { font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--kz-gris); font-weight: 700; margin-bottom: .25rem; }
+.kz-comprobante-total th { font-size: 1.1rem; color: var(--kz-azul); border-top: 2px solid var(--kz-azul); }
+
+@media print {
+    .kz-navbar, .kz-footer, .alert, .d-print-none { display: none !important; }
+    body { background: #fff; }
+    .kz-comprobante { box-shadow: none; border: 1px solid #000; max-width: 100%; }
+    .kz-comprobante-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .kz-card:hover { transform: none; }
+}
